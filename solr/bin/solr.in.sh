@@ -51,14 +51,14 @@
 # Set the ZooKeeper connection string if using an external ZooKeeper ensemble
 # e.g. host1:2181,host2:2181/chroot
 # Leave empty if not using SolrCloud
-#ZK_HOST=""
+# ZK_HOST="10.10.1.1:2181,10.10.1.2:2181,10.10.1.3:2181,10.10.1.4:2181"
 
 # Set the ZooKeeper client timeout (for SolrCloud mode)
-#ZK_CLIENT_TIMEOUT="15000"
+# ZK_CLIENT_TIMEOUT="15000"
 
 # By default the start script uses "localhost"; override the hostname here
 # for production SolrCloud environments to control the hostname exposed to cluster state
-#SOLR_HOST="192.168.1.1"
+# SOLR_HOST="10.10.1.1:2181"
 
 # By default Solr will try to connect to Zookeeper with 30 seconds in timeout; override the timeout if needed
 #SOLR_WAIT_FOR_ZK="30"
@@ -96,7 +96,7 @@
 # Solr provides a default Log4J configuration xml file in server/resources
 # however, you may want to customize the log settings and file appender location
 # so you can point the script to use a different log4j2.xml file
-#LOG4J_PROPS=/var/solr/log4j2.xml
+# LOG4J_PROPS=/var/solr/log4j2.xml
 
 # Changes the logging level. Valid values: ALL, TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF. Default is INFO
 # This is an alternative to changing the rootLogger in log4j2.xml
@@ -183,3 +183,11 @@
 # or if you are using the OOTB solr.xml, can be specified using the system property "solr.shardsWhitelist". Alternatively
 # host checking can be disabled by using the system property "solr.disable.shardsWhitelist"
 #SOLR_OPTS="$SOLR_OPTS -Dsolr.shardsWhitelist=http://localhost:8983,http://localhost:8984"
+ZK_HOST="10.10.1.1:2181,10.10.1.2:2181,10.10.1.3:2181"
+ZK_CLIENT_TIMEOUT="15000"
+SOLR_HOST=$SOLR_HOST
+SOLR_PID_DIR="/var/solr"
+SOLR_HOME="/users/dporte7/solr-8_0/solr/server/solr"
+LOG4J_PROPS="/users/dporte7/solr-8_0/solr/server/resources/log4j2.xml"
+SOLR_LOGS_DIR="/var/solr/logs"
+SOLR_PORT="8983"
